@@ -8,9 +8,9 @@ summary: |-
 upstream:
   url: https://brave.com/
   version:
-    type: command
-    run: |-
-      curl -s -L https://brave-browser-apt-release.s3.brave.com/dists/stable/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: brave' | awk -F ': ' '/Version/{print $2;exit}'
+    type: deb_packages
+    index_url: https://brave-browser-apt-release.s3.brave.com/dists/stable/main/binary-amd64/Packages.gz
+    package: brave-browser
 
 release:
   branch: master
