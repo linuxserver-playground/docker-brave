@@ -6,9 +6,9 @@ summary: brave container image.
 
 upstream:
   version:
-    type: command
-    run: |-
-      curl -s -L https://brave-browser-apt-nightly.s3.brave.com/dists/stable/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: brave-browser-nightly' | awk -F ': ' '/Version/{print $2;exit}'
+    type: deb_packages
+    index_url: https://brave-browser-apt-nightly.s3.brave.com/dists/stable/main/binary-amd64/Packages.gz
+    package: brave-browser-nightly
 
 release:
   branch: borigin
