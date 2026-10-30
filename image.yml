@@ -9,6 +9,10 @@ upstream:
     type: deb_packages
     index_url: https://brave-browser-apt-nightly.s3.brave.com/dists/stable/main/binary-amd64/Packages.gz
     package: brave-browser-nightly
+  notes:
+    type: github_release
+    repo: brave/brave-browser
+    tag: v${VERSION}
 
 release:
   branch: borigin
